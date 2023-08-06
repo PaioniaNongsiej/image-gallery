@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gallery</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+	.image-content{
+	background-image: url("image/background.jpg");
+	height:1000px;
+	width:100%;
+    }
+	</style>
+</head>
+<body>
+<div class="container">
+	<header class="head">
+	<nav>
+		
+		<div class="navi">
+		<a href="https://instagram.com/ionia_nyah?igshid=YmMyMTA2M2Y="> <b>IMAGES BY:</b> PAIONIA NONGSIEJ </a>
+		<a href="https://www.google.com/maps/place/Shillong,+Meghalaya/@25.5901143,91.8223968,12z/data=!3m1!4b1!4m5!3m4!1s0x37507e8f34bd207f:0x62482df7108f882b!8m2!3d25.5787726!4d91.8932535" >  <b>IMAGE LOCATION:</b> SHILLONG </a>
+		</div>
+	</nav>
+	</header>
+	<div class="content">
+		<div class="image-content">
+			<h1 class="topic"><b>Responsive Image Gallery</b></h1>
+			<p class="topic1">AN IMAGE GALLERY WITH A THUMBNAIL CAROUSEL</p>
+		<div class="image-container">   
+		  <div class="caption-container">
+			<p id="caption"></p>
+		  </div>
+		  <div class="row">
+			<div class="column">
+			  <img class="demo cursor" src="image/image1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="1">
+			</div>
+			<div class="column">
+			  <img class="demo cursor" src="image/image2.jpeg" style="width:100%" onclick="currentSlide(2)" alt="2">
+			</div>
+			<div class="column">
+			  <img class="demo cursor" src="image/image3.jpeg" style="width:100%" onclick="currentSlide(3)" alt="3">
+			</div>
+			<div class="column">
+			  <img class="demo cursor" src="image/image4.jpeg" style="width:100%" onclick="currentSlide(4)" alt="4">
+			</div>
+			<div class="column">
+			  <img class="demo cursor" src="image/image5.jpeg" style="width:100%" onclick="currentSlide(5)" alt="5">
+			</div>    
+			<div class="column">
+			  <img class="demo cursor" src="image/image6.jpeg" style="width:100%" onclick="currentSlide(6)" alt="6">
+			</div>
+			<div class="column">
+			  <img class="demo cursor" src="image/image7.jpeg" style="width:100%" onclick="currentSlide(7)" alt="7">
+			</div>
+			<div class="column">
+			  <img class="demo cursor" src="image/image8.jpeg" style="width:100%" onclick="currentSlide(8)" alt="8">
+			</div>
+			<div class="column">
+			  <img class="demo cursor" src="image/image9.jpeg" style="width:100%" onclick="currentSlide(9)" alt="9">
+			</div>
+			<div class="column">
+			  <img class="demo cursor" src="image/image10.jpeg" style="width:100%" onclick="currentSlide(5)" alt="5">
+			</div> 
+		  </div>
+		</div>
+		  <a class="prev" onclick="plusSlides(-1)">❮</a>
+		  <a class="next" onclick="plusSlides(1)">❯</a>
+		 <div class="mySlides"><div class="description"><b>Up the silk worm farm</b></div> <img src="image/image1.jpeg" style="width:100%">
+		  </div>
+		  <div class="mySlides"><div class="description"><b>Ray of sunshine</b></div><img src="image/image2.jpeg" style="width:100%">
+		  </div>
+		  <div class="mySlides"><div class="description"><b>Red winter</b></div><img src="image/image3.jpeg" style="width:100%">
+		  </div>
+		  <div class="mySlides"><div class="description"><b>4:00am winter moon</b></div><img src="image/image4.jpeg" style="width:100%">
+		  </div>
+		  <div class="mySlides"><div class="description"><b>The flowering city</b></div> <img src="image/image5.jpeg" style="width:100%">
+		  </div>
+		  <div class="mySlides"><div class="description"><b>Red autumn</b></div><img src="image/image6.jpeg" style="width:100%">
+		  </div>
+		  <div class="mySlides"><div class="description"><b>Crescent moon</b></div><img src="image/image7.jpeg" style="width:100%">
+		  </div>
+		  <div class="mySlides"> <div class="description"><b>The quite lane</b></div> <img src="image/image8.jpeg" style="width:100%">
+		  </div>
+		  <div class="mySlides"><div class="description"><b>Our swan lake</b></div><img src="image/image9.jpeg" style="width:100%">
+		  </div>
+		  <div class="mySlides"><div class="description"><b>Flora</b></div><img src="image/image10.jpeg" style="width:100%">
+		  </div>
+		</div>
+		
+		<script>
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  let i;
+		  let slides = document.getElementsByClassName("mySlides");
+		  let dots = document.getElementsByClassName("demo");
+		  let captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++)
+		   {
+			slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) 
+		  {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		}
+		
+		</script>
+	</div>
+</div>
+</body>
+</html>
